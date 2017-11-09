@@ -1,0 +1,10 @@
+1a1863,127.0.0.1,GET,http://localhost/web/app_dev.php/,1510227764,,200
+102de7,127.0.0.1,GET,http://localhost/web/app_dev.php/templates/front/stylesheets,1510227764,ba133f,200
+7e4898,127.0.0.1,GET,http://localhost/web/app_dev.php/templates/front/javascripts,1510227764,222c36,200
+ba133f,127.0.0.1,GET,http://localhost/web/app_dev.php/templates/front/stylesheets,1510227764,,500
+222c36,127.0.0.1,GET,http://localhost/web/app_dev.php/templates/front/javascripts,1510227764,,500
+9d2b47,127.0.0.1,GET,http://localhost/web/app_dev.php/,1510227805,,200
+f9910d,127.0.0.1,GET,http://localhost/web/app_dev.php/templates/front/stylesheets,1510227805,ea9fe3,200
+ea9fe3,127.0.0.1,GET,http://localhost/web/app_dev.php/templates/front/stylesheets,1510227805,,500
+fe1207,127.0.0.1,GET,http://localhost/web/app_dev.php/templates/front/javascripts,1510227805,10e1e1,200
+10e1e1,127.0.0.1,GET,http://localhost/web/app_dev.php/templates/front/javascripts,1510227805,,500
