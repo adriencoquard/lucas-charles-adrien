@@ -1,3 +1,9 @@
+## **[Projet Symfony Adrien COQUARD - Lucas ULIVI - Charles BLOT]**
+
+**[Matière]** : Technologie Web
+
+**[Tools]** : Symfony - Wamp with PHP7
+
 Custom CMS Project
 ==============
 
