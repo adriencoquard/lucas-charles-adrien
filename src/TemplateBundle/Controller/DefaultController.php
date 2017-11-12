@@ -33,7 +33,7 @@ class DefaultController extends Controller
         $AssetManager = new \TemplateBundle\Service\AssetManager($kernel,$template, $request);
         $stylesheets = $AssetManager->getStylesheets();
         $factory = new AssetFactory($stylesheets[0]);
-
+        
         $factory->setAssetManager(new AssetManager());
         $lazyAm = new LazyAssetManager($factory);
         $writer = new AssetWriter($this->container->getParameter('kernel.root_dir')); 

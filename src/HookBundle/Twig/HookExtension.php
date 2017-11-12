@@ -1,12 +1,14 @@
 <?php
 
 namespace HookBundle\Twig;
-
 use Twig_Extension;
 use Twig_Environment;
 use Twig_SimpleFunction;
 use Doctrine\ORM\EntityManager;
 use ModuleBundle\Service\ModuleManager;
+use ModuleBundle\Entity\Module;
+use HookBundle\Entity\Hook;
+use HookBundle\Entity\Hookodule;
 
 class HookExtension extends Twig_Extension
 {
@@ -46,6 +48,26 @@ class HookExtension extends Twig_Extension
         //       4. Sort them using hook modules position
         //       5. Render each module view
         //       6. Return HTML
+        /** @var Hook $hook */
+        /** @var HookModule $hookModule */
+        /** @var Module $module */
+
+        $hook = $this->em->getRepository(Hook::class)->findOneBy(array('name' => $hook_name));
+        $hookModules = $this->em->getRepository(HookModule::class)->findBy(array('idHook' => $hook->getId()),array('position' => 'ASC'));
+
+        $tabModules = [];
+        foreach ($hookModules as $hookmodule) {
+            $module = $this->em->getRepository(Module::class)->find($hookmodule->getIdModule());
+            $tabModules[] = $module;
+        }
+
+        $result = '';
+        foreach ($tabModules as $module) {
+            $file = '../templates/default/modules/' . $module->getName() . '/' . $module->getName() . '.html.twig';
+            $result.= file_get_contents($file); //affichage pur -> affiche les focntions en clair
+        }
+
+        return $result;
     }
 
     public function getName()

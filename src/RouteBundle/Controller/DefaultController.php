@@ -8,13 +8,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class DefaultController extends Controller
 {
-    /**
-     * @Route("/", name="front_home")
-     * @Route("/", name="front_category")
-     * @Route("/", name="front_article")
-     * @Route("/", name="front_search")
-     * @Route("/", name="front_login")
+     /**
+     * @Route("/", name="front_home", defaults={"slug" = null, "category" = null})
+     * @Route("/category/{slug}", name="front_category", defaults={"category" = null})
+     * @Route("/category/{category}/article/{slug}", name="front_article")
+     * @Route("/search", name="front_search", defaults={"slug" = null, "category" = null})
+     * @Route("/login", name="front_login", defaults={"slug" = null, "category" = null})
      */
+
     public function frontAction()
     {
         // @todo Make routes
@@ -25,13 +26,13 @@ class DefaultController extends Controller
 
         return $this->render("::front.html.twig");
     }
-
-    /**
-     * @Route("/admin", name="admin_home")
-     * @Route("/", name="admin_settings")
-     * @Route("/", name="admin_modules")
-     * @Route("/", name="admin_content")
+     /**
+     * @Route("/admin", name="admin_home", defaults={"option" = null})
+     * @Route("/admin/settings/{options}", name="admin_settings", defaults={"option" = null})
+     * @Route("/admin/modules/{options}", name="admin_modules", defaults={"option" = null})
+     * @Route("/admin/content/{options}", name="admin_content", defaults={"option"= null})
      */
+     
     public function adminAction()
     {
         // @todo Make routes
