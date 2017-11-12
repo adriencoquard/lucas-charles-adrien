@@ -8,3 +8,4 @@ use Assetic\Extension\Twig\TwigFormulaLoader;
 class TemplateBundle extends Bundle
 {
 }
+ 

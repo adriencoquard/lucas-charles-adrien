@@ -38,8 +38,15 @@ class UserManager
         $roles = array(),
         $enabled = false
     ) {
-        // @todo Make the create method
-        //       Create a user using the FOSUserManager ($this->um)
+         
+        $user = $this->um->createUser();
+        $user->setUsername($username);
+        $user->setEmail($email);
+        $user->setPlainPassword($plain_password);
+        $user->setRoles($roles);
+        $user->setEnabled($enabled);
+
+        $this->um->updateUser($user);
     }
 
     public function update($user)
@@ -54,8 +61,11 @@ class UserManager
      */
     public function get($id = NULL)
     {
-        // @todo Make the get method
-        //       Find a user from ID or get all users, then return
+        if($id)
+            $UserReq = $this->um->findUserBy($id);
+        else
+            $UserReq = $this->um->findUsers();
+        return $UserReq;
     }
 
     public function getCurrent()
@@ -70,7 +80,7 @@ class UserManager
      */
     public function delete($id)
     {
-        // @todo Make the delete method
-        //       Delete a user
+         $UserRaq = $this->um->findUserBy($id);
+        $this->um->deleteUser($UserReq);
     }
 }

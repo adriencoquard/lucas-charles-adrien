@@ -22,8 +22,27 @@ class DefaultController extends Controller
      */
     public function stylesheetsAction()
     {
-        // @todo Make stylesheets action
-        //       Load all stylesheet files and return them in a response
+
+
+        $entity = $this->getDoctrine()->getentity();
+        $template = new template($entity,__DIR__);
+        $kernel = $this->container->get( 'kernel' )->getEnvironment();
+        $request = $this->container->get('request_stack')->getCurrentRequest();
+
+
+        $AssetManager = new \TemplateBundle\Service\AssetManager($kernel,$template, $request);
+        $stylesheets = $AssetManager->getStylesheets();
+        $factory = new AssetFactory($stylesheets[0]);
+
+        $factory->setAssetManager(new AssetManager());
+        $lazyAm = new LazyAssetManager($factory);
+        $writer = new AssetWriter($this->container->getParameter('kernel.root_dir')); 
+        $writer->writeManagerAssets($lazyAm);
+        
+        $response = new Response;
+        $response->SetContent($lazyAm->get('main')->dump());
+        $response->headers->set('Content-Type', 'text/css');
+        return $response;
     }
 
     /**

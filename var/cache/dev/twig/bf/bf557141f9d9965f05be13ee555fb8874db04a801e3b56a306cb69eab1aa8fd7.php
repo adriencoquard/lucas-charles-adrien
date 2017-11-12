@@ -15,11 +15,11 @@ class __TwigTemplate_59f817bc21615972d58d2b71a01b9360ea3d87159cfeeffb5f92dea81f3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3bae011cf1274aef3eaaa1c1bd711583aca4c13fd5d95bfce85078786b430043 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_3bae011cf1274aef3eaaa1c1bd711583aca4c13fd5d95bfce85078786b430043->enter($__internal_3bae011cf1274aef3eaaa1c1bd711583aca4c13fd5d95bfce85078786b430043_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/Exception/traces_text.html.twig"));
+        $__internal_41c9a254ec270c8cb338b5c327f561a7a41e2e728a99a57830368c19911fcccd = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_41c9a254ec270c8cb338b5c327f561a7a41e2e728a99a57830368c19911fcccd->enter($__internal_41c9a254ec270c8cb338b5c327f561a7a41e2e728a99a57830368c19911fcccd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/Exception/traces_text.html.twig"));
 
-        $__internal_cfe282ddc229fd37bafc6ca3c0325db725bb6f4122cd8259baedac3f889182de = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_cfe282ddc229fd37bafc6ca3c0325db725bb6f4122cd8259baedac3f889182de->enter($__internal_cfe282ddc229fd37bafc6ca3c0325db725bb6f4122cd8259baedac3f889182de_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/Exception/traces_text.html.twig"));
+        $__internal_f86a93e37b0929f1a0de7b4b259d89260ae61a941c1bcb1b3bf3a25e377cfffd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f86a93e37b0929f1a0de7b4b259d89260ae61a941c1bcb1b3bf3a25e377cfffd->enter($__internal_f86a93e37b0929f1a0de7b4b259d89260ae61a941c1bcb1b3bf3a25e377cfffd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/Exception/traces_text.html.twig"));
 
         // line 1
         echo "<table class=\"trace trace-as-text\">
@@ -76,10 +76,10 @@ class __TwigTemplate_59f817bc21615972d58d2b71a01b9360ea3d87159cfeeffb5f92dea81f3
 </table>
 ";
         
-        $__internal_3bae011cf1274aef3eaaa1c1bd711583aca4c13fd5d95bfce85078786b430043->leave($__internal_3bae011cf1274aef3eaaa1c1bd711583aca4c13fd5d95bfce85078786b430043_prof);
+        $__internal_41c9a254ec270c8cb338b5c327f561a7a41e2e728a99a57830368c19911fcccd->leave($__internal_41c9a254ec270c8cb338b5c327f561a7a41e2e728a99a57830368c19911fcccd_prof);
 
         
-        $__internal_cfe282ddc229fd37bafc6ca3c0325db725bb6f4122cd8259baedac3f889182de->leave($__internal_cfe282ddc229fd37bafc6ca3c0325db725bb6f4122cd8259baedac3f889182de_prof);
+        $__internal_f86a93e37b0929f1a0de7b4b259d89260ae61a941c1bcb1b3bf3a25e377cfffd->leave($__internal_f86a93e37b0929f1a0de7b4b259d89260ae61a941c1bcb1b3bf3a25e377cfffd_prof);
 
     }
 

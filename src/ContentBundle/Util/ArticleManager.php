@@ -35,8 +35,16 @@ class ArticleManager
         $text,
         $category_id
     ) {
-        // @todo Make the creation method
-        //       Create an article using the entity manager
+        
+        $article = new Article();
+        $article->setText($text);
+        $article->setName($name);
+        $article->setCategoryId($category_id);
+        $article->setCover($cover);
+        $article->setSlug($this->slugify->slugify($name));
+
+        $this->em->persist($article);
+        $this->em->flush();
     }
 
     public function update($article)
@@ -51,8 +59,13 @@ class ArticleManager
      */
     public function get($id = NULL)
     {
-        // @todo Make the get method
-        //       Find an article from ID or if no ID find all articles, then return
+        if($id){
+        $ArticleMan = $this->em->getRepository(Article::class)->findOneById($id);
+        }
+        else{
+        $ArticleMan = $this->em->getRepository(Article::class)->findAll();
+        }
+        return $ArticleMan;
     }
 
     /**
@@ -62,7 +75,8 @@ class ArticleManager
      */
     public function delete($id)
     {
-        // @todo Make the delete method
-        //       Find the article and delete it
+        $ArticleMan = $this->em->getRepository(Article::class)->findOneById($id);
+        $this->em->remove($ArticleMan);
+        $this->em->flush();
     }
 }

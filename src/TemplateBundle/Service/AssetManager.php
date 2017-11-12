@@ -44,8 +44,16 @@ class AssetManager
      */
     private function getLocalStylesheets()
     {
-        // @todo Find local stylesheets and return them
-        // @tips Use the Finder class
+        $f = new Finder();
+        $f->files()->in($this->local_stylesheets);
+        $files = array();
+            
+            if(!$f)
+                return $files;
+            foreach ($f as $file) {
+                $files[] = $file->getRealPath();
+            }
+            return $files;
     }
 
     /**
@@ -55,8 +63,17 @@ class AssetManager
      */
     private function getTemplateStylesheets()
     {
-        // @todo Find template stylesheets and return them
-        // @tips Use the Finder class
+        $f = new Finder();
+        $f->files()->in($this->getTemplateStylesheetsPath());
+        $files = array();
+
+            if(!$f)
+                return $files;
+            foreach ($f as $file) {
+                $files[] = $file->getRealPath();
+            }
+        
+        return $files;
     }
 
     public function getStylesheets()
@@ -84,8 +101,15 @@ class AssetManager
      */
     public function getLocalJavascripts()
     {
-        // @todo Find local javascripts and return them
-        // @tips Use the Finder class
+         $f = new Finder();
+        $f->files()->in($this->local_javascripts);
+        $files = array();
+        if(!$f)
+            return $files;
+        foreach ($f as $file) {
+            $files[] = $file->getRealPath();
+        }
+        return $files;
     }
 
     /**
@@ -95,8 +119,17 @@ class AssetManager
      */
     private function getTemplateJavascripts()
     {
-        // @todo Find template javascripts and return them
-        // @tips Use the Finder class
+        $f = new Finder();
+        $f->files()->in($this->getTemplateJavascriptsPath());
+        $files = array();
+       
+            if(!$f)
+                return $files;
+            foreach ($f as $file) {
+                $files[] = $file->getRealPath();
+            }
+        
+            return $files;
     }
 
     public function getJavascripts()

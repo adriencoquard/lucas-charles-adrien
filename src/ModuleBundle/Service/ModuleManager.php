@@ -66,10 +66,12 @@ class ModuleManager
      */
     public function activate($module_name)
     {
-        // @todo Make the activate method
-        //       Find the module and update its value
+        $module = $this->em->getRepository("ModuleBundle:Module")->findOneByName($module_name);
+        $module->setActive(true);
+        $this->em->persist($module);
+        $this->em->flush();
 
-        return true;
+   
     }
 
     /**
@@ -80,10 +82,10 @@ class ModuleManager
      */
     public function deactivate($module_name)
     {
-        // @todo Make the deactivate method
-        //       Find the module and update its value
-
-        return true;
+        $module = $this->em->getRepository("ModuleBundle:Module")->findOneByName($module_name);
+        $module->setActive(false);
+        $this->em->persist($module);
+        $this->em->flush();
     }
 
     public function install($module_name)
